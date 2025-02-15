@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Voice Assistant</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="text-center mb-4">Voice Assistant</h1>
+
+                        <div class="status-container text-center mb-4">
+                            <div id="status-indicator" class="status-circle"></div>
+                            <p id="status-text" class="mt-2">Click the microphone to start or type your command</p>
+                        </div>
+
+                        <div class="input-group mb-4">
+                            <input type="text" id="textInput" class="form-control" placeholder="Type your command here...">
+                            <button id="sendButton" class="btn btn-outline-secondary">
+                                <i class="fa fa-send"></i>
+                            </button>
+                            <button id="micButton" class="btn btn-outline-primary">
+                                <i class="fa fa-microphone"></i>
+                            </button>
+                        </div>
+
+                        <div class="conversation-container">
+                            <div id="conversation" class="mb-3"></div>
+                        </div>
+
+                        <div class="command-help mt-4">
+                            <h5>Available Commands:</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">"Play [song name]" - Play a YouTube video</li>
+                                <li class="list-group-item">"What time is it?" - Get current time</li>
+                                <li class="list-group-item">"Who is [person]?" - Get Wikipedia info</li>
+                                <li class="list-group-item">"Tell me the news" - Get latest headlines</li>
+                                <li class="list-group-item">"Tell me a joke" - Hear a random joke</li>
+                                <li class="list-group-item">"What's the weather?" - Get weather updates</li>
+                                <li class="list-group-item"> Find the secret command, hint : " rezol "</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/assistant.js') }}"></script>
+</body>
+</html>
