@@ -11,6 +11,9 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "your-secret-key")
 logging.basicConfig(level=logging.DEBUG)
 
+WEATHER_API_KEY = "YeKVLFhgRh5ybveEm0EloagyEU6P8fR5i"
+NEWS_API_KEY = "3e318a9486194236b23398d6464aef00"
+
 def get_youtube_url(query):
     """Generate a YouTube search URL for the given query"""
     base_url = "https://www.youtube.com/results"
@@ -46,7 +49,7 @@ def process_command():
             return jsonify({'response': info})
 
         elif 'news' in command:
-            url = f"https://newsapi.org/v2/top-headlines?country=us&apiKey={NEWS_API_KEY}"
+            url = f"https://newsapi.org/v2/top-headlines?country=us&apiKey=3e318a9486194236b23398d6464aef00"
             response = requests.get(url)
             news = response.json()
             headline = news['articles'][0]['title']
